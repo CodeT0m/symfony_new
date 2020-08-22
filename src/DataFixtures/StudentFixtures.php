@@ -10,7 +10,6 @@ class StudentFixtures extends Fixture
 {
     public function load(ObjectManager $manager)
     {
-        $student = new Student();
 
         $values = [
             [   'firstname' => 'Luke',
@@ -35,6 +34,7 @@ class StudentFixtures extends Fixture
         ];
 
         foreach ($values as $value) {
+            $student = new Student();
             $student->setFirstname($value['firstname']);
             $student->setLastname($value['lastname']);
             $student->setEmail($value['email']);
