@@ -1,0 +1,23 @@
+version: '3.7'
+
+services:
+  mysql:
+    image: mysql:5.7
+    container_name: docker-dlt-mysql
+#    volumes:
+#      - ./db_data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=
+      - MYSQL_USER=symfony
+      - MYSQL_PASSWORD=secret
+
+  webserver:
+    build: ./
+    container_name: docker-dlt-container
+#    volumes:
+#      - ./application:/var/www/application
+    ports:
+      - "8080:80"

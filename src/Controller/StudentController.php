@@ -21,7 +21,6 @@ class StudentController extends AbstractController
 
         $dateTime = new \DateTime();
         $dateTime->getTimestamp();
-        dump($students, $dateTime);
         return $this->render('student/index.html.twig', [
             'students' => $students,
             'date_time' => $dateTime
